@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const {ObjectID} = require('mongodb');
 
-var {mongoose} = require('./db/mongoose.js');
+//var {mongoose} = require('./db/mongoose.js');
 var {Todo} = require('./models/todo.js');
 var {User} = require('./models/user.js');
 
@@ -23,8 +23,6 @@ app.post('/todos', (req, res) => {
     res.status(400).send(e); //
   });
 });
-
-var a;
 
 app.get('/todos', (req, res) => {
   Todo.find().then((todos) => {
